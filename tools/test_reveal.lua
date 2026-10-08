@@ -1,7 +1,7 @@
 -- Loads the real ShaguTweaks reveal modules against a stubbed 1.12 world map,
 -- draws every map with about half its overlays explored, and checks each tile
 -- against what the client's own WorldMapFrame_Update would draw from the DBC.
---   lua tools/test_reveal.lua <AddOns dir> <extras|mods|both> <fix|nofix>
+--   lua tools/test_reveal.lua <AddOns dir> <extras|mods|both> <fix|nofix>   (from the repo root)
 local addons, which, fix = arg[1], arg[2], arg[3] == "fix"
 coroutine = nil
 mod = math.fmod
@@ -9,7 +9,7 @@ local BS = string.char(92)
 local unpack = table.unpack or unpack
 
 -- client data (also used as the ground truth)
-dofile("OctoMapReveal/Overlays.lua")
+dofile("Overlays.lua")
 local truth = OctoMapReveal_Overlays
 OctoMapReveal_Overlays = nil
 
@@ -120,7 +120,7 @@ if which ~= "extras" then load("ShaguTweaks-mods/mods/worldmap-reveal.lua") end
 local watcher
 if fix then
   local before = #frames
-  dofile("OctoMapReveal/Overlays.lua"); dofile("OctoMapReveal/OctoMapReveal.lua")
+  dofile("Overlays.lua"); dofile("OctoMapReveal.lua")
   watcher = frames[#frames]
 end
 -- VARIABLES_LOADED: ShaguTweaks enables the modules, then our handler runs

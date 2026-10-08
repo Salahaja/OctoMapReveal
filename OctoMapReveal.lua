@@ -16,8 +16,8 @@ end
 local function apply()
   -- ShaguTweaks-extras "Reveal World Map": filled at load, read on first map update
   if ShaguTweaks then refill(ShaguTweaks.MapOverlayData) end
-  -- ShaguTweaks-mods "WorldMap Reveal" (assigned when the module enables),
-  -- pfUI's mapreveal and ShaguPlates' copy all use this global
+  -- ShaguTweaks-mods "WorldMap Reveal" (assigned when the module enables;
+  -- ShaguPlates sets the same global at load)
   refill(pfMapOverlayData)
 end
 

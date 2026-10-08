@@ -1,4 +1,3 @@
+# scratch from investigating: extracted client files and other DBC dumps
 extract/
-WorldMapContinent.json
-AreaTable.json
-client-overlays.json
+/*.json

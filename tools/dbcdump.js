@@ -5,7 +5,8 @@
 //   set ELECTRON_RUN_AS_NODE=1 && electron dbcdump.js <client Data dir> <Name>
 const path = require('path');
 const fs = require('fs');
-const storm = require('D:/stuff/OctoLauncher-src/octolauncher/node_modules/stormlib-node');
+// stormlib-node built against Electron's ABI (OctoLauncher's node_modules has one)
+const storm = require(process.env.STORMLIB_NODE || 'D:/stuff/OctoLauncher-src/octolauncher/node_modules/stormlib-node');
 
 const [data, name] = process.argv.slice(2);
 const rank = f => {

@@ -1,0 +1,9 @@
+## Interface: 11200
+## Title: |cff7fd5ffOcto|cffffffffMapReveal
+## Notes: Gives ShaguTweaks' world map reveal modules this client's own overlay table, so OctoWoW's redrawn and new zones reveal correctly.
+## Author: Salahaja
+## Version: 1.0.0
+## OptionalDeps: ShaguTweaks, ShaguTweaks-extras, ShaguTweaks-mods, ShaguPlates
+
+Overlays.lua
+OctoMapReveal.lua

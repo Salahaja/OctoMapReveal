@@ -3,7 +3,8 @@
 //   electron mpqget.js <Data dir> <out dir|--check> <listfile of names>
 const path = require('path');
 const fs = require('fs');
-const storm = require('D:/stuff/OctoLauncher-src/octolauncher/node_modules/stormlib-node');
+// stormlib-node built against Electron's ABI (OctoLauncher's node_modules has one)
+const storm = require(process.env.STORMLIB_NODE || 'D:/stuff/OctoLauncher-src/octolauncher/node_modules/stormlib-node');
 const [data, out, list] = process.argv.slice(2);
 const rank = f => {
 	const m = f.toLowerCase().match(/^patch-([a-z0-9])\.mpq$/);
